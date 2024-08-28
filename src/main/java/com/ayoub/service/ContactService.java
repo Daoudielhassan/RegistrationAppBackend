@@ -21,14 +21,18 @@ public class ContactService{
         return contactDao.SelectAllContacts();
     }
 
-    public void AddContact(ContactRegistrationRequest contactRegistrationRequest){
-        String email=contactRegistrationRequest.email();
+    public void AddContact(ContactRegistrationRequest request){
+        String email=request.email();
         if (contactDao.ExistContactByEmail(email)){
             throw new DuplicateResourceException("this email is already taken");
         }
-        Contact contact = new Contact(contactRegistrationRequest.name(), contactRegistrationRequest.email(), contactRegistrationRequest.message());
+        Contact contact = new Contact(request.name(), request.email(), request.message());
         contactDao.InsertContact(contact);
     }
+
+
+
+
 
     public Contact FindContactById(Integer id){
         return contactDao.getContactById(id).orElseThrow(() -> new ResourceNotFound(

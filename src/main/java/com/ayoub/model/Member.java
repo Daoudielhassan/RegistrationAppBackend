@@ -1,6 +1,10 @@
 package com.ayoub.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Member {
@@ -14,13 +18,26 @@ public class Member {
             generator = "member_id_sequence"
     )
     private int Id;
+    @Size(min = 1 ,max = 10, message = "The first name should not exceed ten characters")
     @Column(nullable = false)
+    @NotBlank(message = "The first name is mandatory")
     private String FirstName;
-    @Column(nullable = false)
-    private String LastName;
-    @Column(nullable = false)
 
+
+    @Size(min = 1 ,max = 10, message = "The last name should not exceed ten characters")
+    @Column(nullable = false)
+    @NotBlank(message = "The last name is mandatory")
+    private String LastName;
+
+
+    @Column(nullable = false)
+    @NotBlank(message = "The phone number is mandatory")
+    @Pattern(regexp = "^(\\+212\\d{9}|06\\d{8})$",
+            message = "Phone number should be valid Moroccan format")
     private String PhoneNumber;
+
+    @Email(message = "Email format should be valid")
+    @NotBlank(message = "The email is mandatory")
     @Column(nullable = false)
     private String email;
 
