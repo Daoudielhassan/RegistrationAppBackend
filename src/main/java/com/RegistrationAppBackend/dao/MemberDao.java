@@ -1,6 +1,6 @@
-package com.ayoub.dao;
+package com.RegistrationAppBackend.dao;
 
-import com.ayoub.model.Member;
+import com.RegistrationAppBackend.model.Member;
 
 import java.util.List;
 import java.util.Optional;

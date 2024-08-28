@@ -1,6 +1,6 @@
-package com.ayoub.dao;
+package com.RegistrationAppBackend.dao;
 
-import com.ayoub.model.Contact;
+import com.RegistrationAppBackend.model.Contact;
 
 import java.util.List;
 import java.util.Optional;

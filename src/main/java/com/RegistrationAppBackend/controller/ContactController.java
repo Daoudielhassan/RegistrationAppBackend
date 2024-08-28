@@ -1,10 +1,9 @@
-package com.ayoub.controller;
+package com.RegistrationAppBackend.controller;
 
-import com.ayoub.model.Contact;
-import com.ayoub.registrationrequest.ContactRegistrationRequest;
-import com.ayoub.repository.ContactRepository;
-import com.ayoub.service.ContactService;
-import org.springframework.stereotype.Controller;
+import com.RegistrationAppBackend.model.Contact;
+import com.RegistrationAppBackend.registrationrequest.ContactRegistrationRequest;
+import com.RegistrationAppBackend.repository.ContactRepository;
+import com.RegistrationAppBackend.service.ContactService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

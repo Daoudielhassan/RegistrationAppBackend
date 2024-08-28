@@ -1,9 +1,9 @@
-package com.ayoub.controller;
+package com.RegistrationAppBackend.controller;
 
-import com.ayoub.registrationrequest.MemberRegistrationRequest;
-import com.ayoub.repository.MemberRepository;
-import com.ayoub.service.MemberService;
-import com.ayoub.model.Member;
+import com.RegistrationAppBackend.registrationrequest.MemberRegistrationRequest;
+import com.RegistrationAppBackend.repository.MemberRepository;
+import com.RegistrationAppBackend.service.MemberService;
+import com.RegistrationAppBackend.model.Member;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

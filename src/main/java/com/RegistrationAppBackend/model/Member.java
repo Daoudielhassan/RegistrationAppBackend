@@ -1,4 +1,4 @@
-package com.ayoub.model;
+package com.RegistrationAppBackend.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;

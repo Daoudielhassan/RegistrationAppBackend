@@ -1,8 +1,8 @@
-package com.ayoub.jpa;
+package com.RegistrationAppBackend.jpa;
 
-import com.ayoub.repository.MemberRepository;
-import com.ayoub.dao.MemberDao;
-import com.ayoub.model.Member;
+import com.RegistrationAppBackend.repository.MemberRepository;
+import com.RegistrationAppBackend.dao.MemberDao;
+import com.RegistrationAppBackend.model.Member;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

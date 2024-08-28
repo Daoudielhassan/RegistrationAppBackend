@@ -1,7 +1,6 @@
-package com.ayoub.model;
+package com.RegistrationAppBackend.model;
 
 import jakarta.persistence.*;
-import jakarta.transaction.Transactional;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

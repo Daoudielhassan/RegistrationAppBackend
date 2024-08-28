@@ -1,8 +1,8 @@
-package com.ayoub.jpa;
+package com.RegistrationAppBackend.jpa;
 
-import com.ayoub.dao.ContactDao;
-import com.ayoub.model.Contact;
-import com.ayoub.repository.ContactRepository;
+import com.RegistrationAppBackend.dao.ContactDao;
+import com.RegistrationAppBackend.model.Contact;
+import com.RegistrationAppBackend.repository.ContactRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

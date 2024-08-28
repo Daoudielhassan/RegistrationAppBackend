@@ -1,4 +1,4 @@
-package com.ayoub.registrationrequest;
+package com.RegistrationAppBackend.registrationrequest;
 
 public record MemberRegistrationRequest(String firstName,
                                         String lastName,

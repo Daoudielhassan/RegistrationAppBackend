@@ -1,10 +1,10 @@
-package com.ayoub.service;
+package com.RegistrationAppBackend.service;
 
-import com.ayoub.Exception.DuplicateResourceException;
-import com.ayoub.Exception.ResourceNotFound;
-import com.ayoub.dao.ContactDao;
-import com.ayoub.model.Contact;
-import com.ayoub.registrationrequest.ContactRegistrationRequest;
+import com.RegistrationAppBackend.Exception.DuplicateResourceException;
+import com.RegistrationAppBackend.Exception.ResourceNotFound;
+import com.RegistrationAppBackend.dao.ContactDao;
+import com.RegistrationAppBackend.model.Contact;
+import com.RegistrationAppBackend.registrationrequest.ContactRegistrationRequest;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
