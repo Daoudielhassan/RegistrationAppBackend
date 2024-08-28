@@ -1,4 +1,4 @@
-package com.ayoub;
+package com.ayoub.model;
 
 import jakarta.persistence.*;
 

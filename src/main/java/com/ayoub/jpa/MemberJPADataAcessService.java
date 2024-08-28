@@ -1,11 +1,14 @@
-package com.ayoub;
+package com.ayoub.jpa;
 
+import com.ayoub.repository.MemberRepository;
+import com.ayoub.dao.MemberDao;
+import com.ayoub.model.Member;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 @Repository("jpa")
-public class MemberJPADataAcessService implements MemberDao{
+public class MemberJPADataAcessService implements MemberDao {
     private final MemberRepository memberRepository;
 
     public MemberJPADataAcessService(MemberRepository memberRepository) {

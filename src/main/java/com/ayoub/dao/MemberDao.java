@@ -1,4 +1,6 @@
-package com.ayoub;
+package com.ayoub.dao;
+
+import com.ayoub.model.Member;
 
 import java.util.List;
 import java.util.Optional;

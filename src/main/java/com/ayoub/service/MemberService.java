@@ -1,7 +1,10 @@
-package com.ayoub;
+package com.ayoub.service;
 
 import com.ayoub.Exception.DuplicateResourceException;
 import com.ayoub.Exception.ResourceNotFound;
+import com.ayoub.dao.MemberDao;
+import com.ayoub.model.Member;
+import com.ayoub.registrationrequest.MemberRegistrationRequest;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
