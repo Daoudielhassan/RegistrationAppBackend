@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   db:
     container_name: my-postgres
@@ -13,8 +15,22 @@ services:
     networks:
       - db
     restart: unless-stopped
+
+  app:  # Add your Spring Boot application service here
+    build:
+      context: .  # This assumes your Dockerfile is in the root of your project
+      dockerfile: Dockerfile  # Specify the Dockerfile name
+    ports:
+      - "8080:8080"  # Map port 8080 of the container to port 8080 on the host
+    depends_on:
+      - db  # Ensure the app starts after the db is ready
+    networks:
+      - db
+    restart: unless-stopped
+
 networks:
   db:
     driver: bridge
+
 volumes:
   db:
