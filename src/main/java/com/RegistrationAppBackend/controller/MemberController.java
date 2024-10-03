@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api1")
+@CrossOrigin("http://localhost:3000")
 public class MemberController {
     private final MemberService memberService;
     private final MemberRepository memberRepository;

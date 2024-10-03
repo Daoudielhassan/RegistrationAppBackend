@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api2")
+@CrossOrigin("http://localhost:3000")
 public class ContactController {
     ContactService contactService;
     ContactRepository contactRepository;
