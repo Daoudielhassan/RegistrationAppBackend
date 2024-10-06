@@ -5,8 +5,8 @@ services:
     container_name: my-postgres
     image: postgres
     environment:
-      POSTGRES_USER: ayoub
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: ayoub  # Replace with your database user
+      POSTGRES_PASSWORD: password  # Replace with your database password
       PGDATA: /data/postgres
     volumes:
       - db:/data/postgres
@@ -16,21 +16,24 @@ services:
       - db
     restart: unless-stopped
 
-  app:  # Add your Spring Boot application service here
+  app:
     build:
-      context: .  # This assumes your Dockerfile is in the root of your project
-      dockerfile: Dockerfile  # Specify the Dockerfile name
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/your_database
+      SPRING_DATASOURCE_USERNAME: ayoub  # Replace with the same user as POSTGRES_USER
+      SPRING_DATASOURCE_PASSWORD: password  # Replace with the same password as POSTGRES_PASSWORD
     ports:
-      - "8080:8080"  # Map port 8080 of the container to port 8080 on the host
+      - "8080:8080"
     depends_on:
-      - db  # Ensure the app starts after the db is ready
+      - db
     networks:
       - db
     restart: unless-stopped
 
 networks:
   db:
-    driver: bridge
 
 volumes:
   db:

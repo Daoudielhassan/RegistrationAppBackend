@@ -1,14 +1,25 @@
-# Use the official OpenJDK image from the Docker Hub
+# Use a base image that includes OpenJDK
 FROM openjdk:17-jdk-slim
 
-# Set the working directory in the container
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the JAR file from the target directory into the working directory
-COPY target/RegistrationApplication-0.0.1-SNAPSHOT.jar app.jar
+# Copy Maven wrapper and the pom.xml file
+COPY mvnw* ./
+COPY .mvn .mvn
+COPY pom.xml ./
 
-# Expose the port that your Spring Boot application runs on (default is 8080)
+# Run Maven dependency resolution
+RUN ./mvnw dependency:go-offline
+
+# Copy the rest of the project files
+COPY src ./src
+
+# Build the Spring Boot application
+RUN ./mvnw clean package -DskipTests
+
+# Expose the default port for Spring Boot (usually 8080)
 EXPOSE 8080
 
-# Command to run the JAR file
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Run the application
+ENTRYPOINT ["java", "-jar", "target/your-app.jar"]
